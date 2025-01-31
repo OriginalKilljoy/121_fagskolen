@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>121a</title>
+</head>
+<body>
+    <input id="userInputNumberX" type="number" placeholder="Gi en x verdi"/>
+    <input id="userInputNumberY" type="number" placeholder="Gi en y verdi"/>
+    <select id="userInputBackgroundColor" >
+      <option value="" disabled selected>Velg en bakgrunnsfarge</option>
+      <option value="red">Rød</option>
+      <option value="blue">Blå</option>
+      <option value="yellow">Gul</option>
+      <option value="purple">Lilla</option>
+    </select>
+    <select id="userInputForegroundColor" >
+      <option value="" disabled selected>Velg en forgrunnsfarge</option>
+      <option value="red">Rød</option>
+      <option value="blue">Blå</option>
+      <option value="yellow">Gul</option>
+      <option value="purple">Lilla</option>
+    </select>
+    <button onclick="addCircleFromInput(getElementById('userInputNumberX').value, document.getElementById('userInputNumberY').value, document.getElementById('userInputBackgroundColor').value, document.getElementById('userInputForegroundColor').value)">Lag en sirkel</button>
+    <button onclick="addSquareFromInput(getElementById('userInputNumberX').value, document.getElementById('userInputNumberY').value, document.getElementById('userInputBackgroundColor').value, document.getElementById('userInputForegroundColor').value)">Lag en firkant</button>
+
+<br/>
+<svg 
+  id="mySvg"
+  width="800" 
+  height="600" 
+  style="background-color: lightgray;">
+</svg>
+<script>
+  function addCircle(x, y, backgroundColor, foregroundColor) {
+      document.getElementById('mySvg').innerHTML = /*HTML*/`
+          <circle cx="${x}" cy="${y}" r="40" stroke="${foregroundColor}" stroke-width="4" fill="${backgroundColor}" />            
+      `;
+  }
+
+  function addSquare(x, y, backgroundColor, foregroundColor) {
+      document.getElementById('mySvg').innerHTML = /*HTML*/`
+          <rect x="${x}" y="${y}" width="" stroke="${foregroundColor}" stroke-width="4" fill="${backgroundColor}" />            
+      `;
+  }
+
+  function addCircleFromInput(inputX, inputY, backgroundColor, foregroundColor){
+    addCircle(inputX, inputY, backgroundColor, foregroundColor);
+  }
+
+  function addSquareFromInput(inputX, inputY, backgroundColor, foregroundColor){
+    addSquare(inputX, inputY, backgroundColor, foregroundColor);
+  }
+
+/*
+Done
+- Tar inn x-parameter med 30, knapp som sender med 70
+- Input type number, én knapp og addCircleFromInput() til addCricle().
+- Input for y-verdi
+- Input for bakgrunnsfarge
+- Select for bakgrunnsfarge
+
+
+*/
+</script>
+</body>
+</html>
