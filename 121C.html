@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>121c</title>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        createForm();
+        function createForm(){
+            addInputField("First name:", "text");
+            addInputField("Last name:", "text");
+            addInputField("En til hundre:", "range");
+            addInputField("Skriv inn et tall:", "number");
+            addRadioAndCheckboxes("radio", "HTML");
+            addRadioAndCheckboxes("radio", "CSS");
+            addRadioAndCheckboxes("radio", "JavaScript");
+            addRadioAndCheckboxes("checkbox", "I have a bike");
+            addRadioAndCheckboxes("checkbox", "I have a car");
+            addRadioAndCheckboxes("checkbox", "I have a boat");
+        }
+
+        function addInputField(inputLabel, inputType){
+            document.getElementById('app').innerHTML += /*HTML*/`
+            <label>${inputLabel}</label><br>
+            <input type = "${inputType}"><br>
+            `;
+        }
+
+        function addRadioAndCheckboxes(inputType, inputLabel){
+            document.getElementById('app').innerHTML += /*HTML*/`
+            <input type = "${inputType}">
+            <label>${inputLabel}</label><br>
+            `;
+        }
+/*
+OPPGAVE
+- Legg koden inn i JavaScript
+- Refakturer og del opp i funksjoner (bruk parametre)
+    - Kan løkker brukes her for å beholde "for" og "id" i label og input?
+*/
+    </script>
+</body>
+</html>

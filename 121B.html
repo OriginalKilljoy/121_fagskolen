@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>121b</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    
+    <script>
+        addTable();
+
+        function addTable() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+                <table id="myTable"></table>
+            `;
+            addHeader("Dag", "Time", "Minutt", "Temperatur");
+            addRow(1, 10, 0, 5);
+            addRow(1, 10, 15, 6);
+            addRow(1, 10, 30, 7);
+        }
+
+        function addHeader(title1, title2, title3, title4){
+            document.getElementById('myTable').innerHTML += /*HTML*/`
+            <tr>
+                <th>${title1}</th>
+                <th>${title2}</th>
+                <th>${title3}</th>
+                <th>${title4}</th>
+            </tr>
+            `;
+        }
+        function addRow(day, hour, minute, temperature){
+            document.getElementById('myTable').innerHTML += /*HTML*/`
+            <tr>
+                <td>${day}</td>
+                <td>${hour}</td>
+                <td>${minute}</td>
+                <td>${temperature}</td>
+            </tr>
+            `;
+        }
+        //Lag tabllen med JavaScript
+        //Lag en funksjon som legger til en rad i tabellen
+        //Refakturer og rydd opp
+        //OBS OBS - Kan dette gjøres med array og loops - husk å sjekke dette
+    </script>
+</body>
+
+</html>
